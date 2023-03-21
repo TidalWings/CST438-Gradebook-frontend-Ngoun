@@ -43,6 +43,10 @@ class Assignment extends React.Component {
     })
     .catch(err => console.error(err)); 
   }
+
+  handleAdd = ( ) => {
+      console.log("Gradebook.addAssignment");
+   };
   
    onRadioClick = (event) => {
     console.log("Assignment.onRadioClick " + event.target.value);
@@ -83,6 +87,9 @@ class Assignment extends React.Component {
                     variant="outlined" color="primary" disabled={this.state.assignments.length===0}  style={{margin: 10}}>
               Grade
             </Button>
+            <Button component={Link} to={{pathname:'/assignment/new'}} id="add" variant='outlined' color='primary' style={{margin: 10}} onClick={this.handleAdd}>
+                    Add New Assignment
+                </Button>
             <ToastContainer autoClose={1500} /> 
           </div>
       )
